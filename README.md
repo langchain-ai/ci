@@ -21,7 +21,7 @@ from the repositories in the LangChain ecosystem.
 3. release.yml
 4. scheduled.yml
 
-### pull_request.yml
+### pull_request.yml: Not Started
 
 This workflow is triggered when a pull request is opened or updated. Its primary purpose
 is to run the tests on the code changes in the pull request and notify the developers
@@ -35,7 +35,7 @@ The main steps in this workflow are:
 2. Call the `_public_ci.yml` workflow on each changed library (as a matrix)
 3. Get the CI summary across all libraries.
 
-### push.yml
+### push.yml: Not Started
 
 This workflow is triggered when the main/master branch is updated.
 
@@ -45,11 +45,11 @@ The main steps in this workflow are:
 2. Call the `_public_ci.yml` workflow on each library (as a matrix)
 3. Get the CI summary across all libraries.
 
-### release.yml
+### release.yml: Not Started
 
 This workflow is triggered when a new release is requested.
 
-### scheduled.yml
+### scheduled.yml: Not Started
 
 This workflow is triggered on a schedule, typically every morning (Pacific Time) at 13:00 UTC.
 
@@ -60,7 +60,7 @@ This repository implements 2 "supporting" workflows that are used by the main wo
 1. _public_ci.yml
 2. _integration_tests.yml
 
-### _public_ci.yml
+### _public_ci.yml: Not Started
 
 This workflow is used to run the tests on the code changes in the pull request,
 without relying on any secrets.
@@ -79,7 +79,7 @@ versions of Python, also tests different versions of
 - minimum versions of dependencies (e.g. `langchain-core`, `SQLAlchemy`) if applicable
 
 
-### _integration_tests.yml
+### _integration_tests.yml: Not Started
 
 This workflow runs integration tests.
 
@@ -88,13 +88,13 @@ This workflow runs integration tests.
 This repository implements one "meta" workflow that is used to test the workflows
 in this repository against the LangChain ecosystem repositories.
 
-1. _meta_ci.yml
+1. _meta_ci.yml: Not Started
 
 ## Actions
 
 This repository contains custom actions that are used by the workflows in this repository.
 
-1. poetry_setup
-2. get_changed_libs
-3. get_all_libs
-4. get_ci_summary
+1. poetry_setup: In progress
+2. get_changed_libs: Not Started
+3. get_all_libs: Not Started
+4. get_ci_summary: Not Started
