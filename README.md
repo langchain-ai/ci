@@ -94,7 +94,7 @@ in this repository against the LangChain ecosystem repositories.
 
 This repository contains custom actions that are used by the workflows in this repository.
 
-1. poetry_setup: In progress
+1. poetry_setup: Done
 2. get_changed_libs: Not Started
 3. get_all_libs: Not Started
 4. get_ci_summary: Not Started
