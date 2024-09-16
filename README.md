@@ -1,4 +1,4 @@
-# LangChain Shared CI/CD
+# LangChain Shared CI/CD \[WIP\]
 
 This repository contains Github Actions workflows for the LangChain ecosystem.
 
@@ -29,9 +29,21 @@ of the results.
 
 The jobs in this workflow must pass for a pull request to be merged.
 
+The main steps in this workflow are:
+
+1. Get the changed libraries.
+2. Call the `_public_ci.yml` workflow on each changed library (as a matrix)
+3. Get the CI summary across all libraries.
+
 ### push.yml
 
 This workflow is triggered when the main/master branch is updated.
+
+The main steps in this workflow are:
+
+1. Get all the libraries.
+2. Call the `_public_ci.yml` workflow on each library (as a matrix)
+3. Get the CI summary across all libraries.
 
 ### release.yml
 
@@ -52,6 +64,20 @@ This repository implements 2 "supporting" workflows that are used by the main wo
 
 This workflow is used to run the tests on the code changes in the pull request,
 without relying on any secrets.
+
+The main jobs in this workflow are:
+
+1. Get the jobs configs to run for the library.
+2. Lint (if applicable)
+3. Test (if applicable)
+4. Get the CI summary for the library.
+
+Note that the Test step has a matrix that in addition to testing different
+versions of Python, also tests different versions of
+
+- `pydantic`
+- minimum versions of dependencies (e.g. `langchain-core`, `SQLAlchemy`) if applicable
+
 
 ### _integration_tests.yml
 
